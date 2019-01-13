@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     func addViews() {
         let frame = customView.frame
         let myView = RoundShadowView(frame: CGRect(origin: CGPoint(x: frame.minX,
-                                                                   y: view.bounds.height - frame.size.height - 32),
+                                                                   y: view.bounds.height - frame.size.height - 64),
                                                    size: frame.size))
         myView.useAutolayout = true
         view.addSubview(myView)
