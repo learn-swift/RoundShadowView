@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +13,76 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ShadowRoundCorner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myk-9D-0Dn" customClass="RoundShadowView" customModule="ShadowRoundCorner" customModuleProvider="target">
+                                <rect key="frame" x="32" y="52" width="311" height="60"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.76470588240000004" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ELu-2L-y5b"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZj-WI-BF2" customClass="RoundShadowView" customModule="ShadowRoundCorner" customModuleProvider="target">
+                                <rect key="frame" x="32" y="144" width="311" height="60"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.76470588240000004" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1.6000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSR-dA-4Az" customClass="RoundShadowView" customModule="ShadowRoundCorner" customModuleProvider="target">
+                                <rect key="frame" x="32" y="236" width="311" height="60"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.76470588240000004" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LZj-WI-BF2" firstAttribute="leading" secondItem="myk-9D-0Dn" secondAttribute="leading" id="32C-X7-fdy"/>
+                            <constraint firstItem="gSR-dA-4Az" firstAttribute="top" secondItem="LZj-WI-BF2" secondAttribute="bottom" constant="32" id="FMN-ld-73f"/>
+                            <constraint firstItem="LZj-WI-BF2" firstAttribute="height" secondItem="myk-9D-0Dn" secondAttribute="height" id="PvA-M2-ati"/>
+                            <constraint firstItem="myk-9D-0Dn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="WYk-UE-5zl"/>
+                            <constraint firstItem="myk-9D-0Dn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="XaO-Qa-509"/>
+                            <constraint firstItem="LZj-WI-BF2" firstAttribute="trailing" secondItem="myk-9D-0Dn" secondAttribute="trailing" id="aUC-MY-1JY"/>
+                            <constraint firstItem="myk-9D-0Dn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="c6Q-0f-Fiy"/>
+                            <constraint firstItem="gSR-dA-4Az" firstAttribute="trailing" secondItem="LZj-WI-BF2" secondAttribute="trailing" id="jTB-kc-tId"/>
+                            <constraint firstItem="gSR-dA-4Az" firstAttribute="leading" secondItem="LZj-WI-BF2" secondAttribute="leading" id="jwi-r4-fcF"/>
+                            <constraint firstItem="gSR-dA-4Az" firstAttribute="height" secondItem="LZj-WI-BF2" secondAttribute="height" id="lm6-vq-dbS"/>
+                            <constraint firstItem="LZj-WI-BF2" firstAttribute="top" secondItem="myk-9D-0Dn" secondAttribute="bottom" constant="32" id="tp8-Z8-IJH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="customView" destination="gSR-dA-4Az" id="fGw-lt-bkz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
