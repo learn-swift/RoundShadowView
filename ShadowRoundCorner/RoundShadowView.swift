@@ -57,7 +57,6 @@ class RoundShadowView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = cornerRadius
-        print(#function)
         addShadowLayer()
     }
 
